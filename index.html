@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="rdApp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>RD Resume</title>
+
+    <script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:400,600"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <script src="assets/js/lib/angular.js"></script>
+    <script src="assets/js/lib/angular-route.min.js"></script>
+    <script src="assets/js/lib/jquery.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div id="main" controller="mainController">
+      <header>
+        <div class="headerRemote">
+          <div class="logo" alt="rd-logo">
+            <img src="assets/images/rdlogo.svg" />
+          </div>
+          <div class="menuRemoteButton" ng-click="toggleMenu($event);">
+            <svg
+              width="20"
+              height="10"
+              viewBox="0 0 20 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 1H20" stroke="white" stroke-width="1.5" />
+              <path d="M0 9H20" stroke="white" stroke-width="1.5" />
+            </svg>
+          </div>
+        </div>
+        <nav class="headerExpand">
+          <div class="menuContainer">
+            <ul class="menu">
+              <a href="#home" ng-click="toggleMenu($event);"><li>home</li></a>
+              <a href="#works" ng-click="toggleMenu($event);"><li>works</li></a>
+              <a href="#profile" ng-click="toggleMenu($event);"
+                ><li>profile</li></a
+              >
+              <a href="#contact" ng-click="toggleMenu($event);"
+                ><li>contact</li></a
+              >
+            </ul>
+          </div>
+          <div class="downloadResume">
+            <a href="assets/pdf/rdresume.pdf" download>
+              <p>
+                <span> download resume </span>
+                <img src="assets/images/download.svg" alt="download-button" />
+              </p>
+            </a>
+          </div>
+          <div class="mailInfo">
+            <a href="mailto:rahuldasr@gmail.com">rahuldasr@gmail.com</a>
+            <p>Bangalore / Kerala</p>
+          </div>
+          <div class="socialLinks">
+            <a
+              href="https://www.linkedin.com/in/rahuldas-rahul-1b468397/"
+              target="_blank"
+              ><span><i class="fa fa-linkedin" aria-hidden="true"></i></span
+            ></a>
+            <a href="https://www.instagram.com/rahuldasrahul/" target="_blank"
+              ><span><i class="fa fa-instagram" aria-hidden="true"></i></span
+            ></a>
+            <a href="https://www.behance.net/rahuldasr" target="_blank"
+              ><span><i class="fa fa-behance" aria-hidden="true"></i></span
+            ></a>
+            <a href="https://www.behance.net/rahuldasr" target="_blank"
+              ><span><i class="fa fa-dribbble" aria-hidden="true"></i></span
+            ></a>
+          </div>
+          <div class="copyright">
+            <p>
+              <span><i class="fa fa-copyright" aria-hidden="true"></i></span>
+              2021rahuldas.work. All rights reserved.
+            </p>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="page-container">
+      <div ng-view></div>
+    </div>
+  </body>
+</html>
