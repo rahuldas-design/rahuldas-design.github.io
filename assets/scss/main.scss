@@ -103,37 +103,29 @@ header {
   }
 }
 
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
+//Video BG
+
+.video-background {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+
+    @media (min-aspect-ratio: 16/9) {
+      height: 56.25vw;
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      width: 177.78vh;
+    }
+  }
 }
-
-// /* Add some content at the bottom of the video/page */
-// .content {
-//   position: fixed;
-//   bottom: 0;
-//   background: rgba(0, 0, 0, 0.5);
-//   color: #f1f1f1;
-//   width: 100%;
-//   padding: 20px;
-// }
-
-/* Style the button used to pause/play the video */
-// #myBtn {
-//   width: 200px;
-//   font-size: 18px;
-//   padding: 10px;
-//   border: none;
-//   background: #000;
-//   color: #fff;
-//   cursor: pointer;
-// }
-
-// #myBtn:hover {
-//   background: #ddd;
-//   color: black;
-// }
