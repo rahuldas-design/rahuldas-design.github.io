@@ -108,24 +108,11 @@ header {
 .video-background {
   position: relative;
   overflow: hidden;
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
-  pointer-events: none;
 
-  iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    transform: translate(-50%, -50%);
-
-    @media (min-aspect-ratio: 16/9) {
-      height: 56.25vw;
-    }
-
-    @media (max-aspect-ratio: 16/9) {
-      width: 177.78vh;
-    }
+  video {
+    z-index: -1;
+    pointer-events: none;
   }
 }
